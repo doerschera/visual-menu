@@ -3,7 +3,7 @@ import React from 'react';
 export default class Menu extends React.Component {
   mapItem(item, i) {
     return (
-      <div className="menu-item" key={item}>{item}</div>
+      <li className="menu-item" key={item}>{item}</li>
     )
   }
 
@@ -12,11 +12,15 @@ export default class Menu extends React.Component {
     let aLaCarteItems = this.props.aLaCarteItems.map(this.mapItem);
 
     return (
-      <div>
+      <div className="menu">
         <h4>Combos</h4>
-        {comboItems}
+        <ul className="menu-list">
+          {comboItems}
+        </ul>
         <h4>A La Carte</h4>
-        {aLaCarteItems}
+        <ul className="menu-list">
+          {aLaCarteItems}
+        </ul>
       </div>
     )
   }

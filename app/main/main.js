@@ -15,10 +15,12 @@ export default class Main extends React.Component {
     return (
       <div>
         <h1>Place Order</h1>
-        <Menu
-          comboItems={this.state.comboItems}
-          aLaCarteItems={this.state.aLaCarteItems}
-        />
+        <div className="container">
+          <Menu
+            comboItems={this.state.comboItems}
+            aLaCarteItems={this.state.aLaCarteItems}
+          />
+        </div>
       </div>
     )
   }

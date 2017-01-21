@@ -1,0 +1,25 @@
+
+.menu {
+  width: 400px;
+  height: 90vh;
+}
+
+.menu-item {
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  font-size: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  &:nth-child(odd) {
+    background-color: $light-teal;
+  }
+  &:nth-child(even) {
+    background-color: $dark-teal;
+    margin: 5px 0;
+  }
+}

@@ -5,22 +5,31 @@
   padding-bottom: 15px !important;
 }
 
-.order-number {
+.order-number, .past-order-heading {
   color: $dark-blue;
   border-bottom: solid 1px $dark-blue;
 }
 
-.order-item {
+.order-info {
   h6 {
-    color: $blue;
     font-size: 20px;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 0;
   }
   button {
     background-color: transparent;
     border: none;
     border-style: none;
     text-decoration: underline;
+    color: $dark-blue;
+  }
+}
+
+.order-items {
+  h6 {
+    color: $blue;
+  }
+  button {
     color: $dark-blue;
   }
   &:nth-child(even) {

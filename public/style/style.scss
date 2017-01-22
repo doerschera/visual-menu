@@ -12,7 +12,7 @@ $red: rgb(233, 94, 108);
 body {
   font-family: 'Quicksand', 'Helvetica', 'Aerial', sans-serif;
   font-weight: 400;
-  background-color: #f2f2d9;
+  background-color: #f2f2eb;
 }
 
 ul {
@@ -36,7 +36,7 @@ li {
 
 @import "partials/menu";
 @import "partials/new-order";
-
+@import "partials/past-orders";
 
 
 

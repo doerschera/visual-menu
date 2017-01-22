@@ -76,6 +76,22 @@ i {
 .order-items:nth-child(even) h6 {
   color: #48515f; }
 
+.special-notes p {
+  color: #48515f;
+  margin-bottom: 0; }
+.special-notes input[type=text] {
+  color: #48515f; }
+  .special-notes input[type=text]:focus {
+    border-bottom-color: #48515f;
+    box-shadow: 0 1px 0 0 #48515f; }
+
+.done-button {
+  background-color: #48515f;
+  color: white;
+  border: none;
+  border-style: none;
+  float: right; }
+
 .past-orders {
   background-color: #f9f9f9;
   padding: 17px; }

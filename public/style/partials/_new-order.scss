@@ -37,3 +37,25 @@
     }
   }
 }
+
+.special-notes {
+  p {
+    color: $dark-blue;
+    margin-bottom: 0;
+  }
+  input[type=text] {
+    color: $dark-blue;
+    &:focus {
+      border-bottom-color: $dark-blue;
+      box-shadow: 0 1px 0 0 $dark-blue;
+    }
+  }
+}
+
+.done-button {
+  background-color: $dark-blue;
+  color: white;
+  border: none;
+  border-style: none;
+  float: right;
+}

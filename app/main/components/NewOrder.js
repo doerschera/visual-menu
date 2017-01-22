@@ -17,6 +17,11 @@ export default class NewOrder extends React.Component {
         <ul className="order-list">
           {orderItems}
         </ul>
+        <div className="input-field special-notes">
+          <p>Special Notes</p>
+          <input type="text" />
+        </div>
+        <button className="done-button">Done</button>
       </div>
     )
   }

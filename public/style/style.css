@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500");
+body {
+  font-family: 'Quicksand', 'Helvetica', 'Aerial', sans-serif;
+  font-weight: 400;
+  background-color: #f2f2d9; }
+
+ul {
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+.greeting {
+  color: #e95e6c; }
+
+.menu h4 {
+  color: #f6bd58;
+  font-size: 24px;
+  font-weight: 500; }
+
+.menu-item {
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  font-size: 30px;
+  line-height: 50px;
+  cursor: pointer;
+  background-color: #61c5be; }
+  .menu-item img {
+    height: 100px; }
+  .menu-item:hover {
+    background-color: #86d3cd; }
+
+.menu-item-name {
+  margin-top: 5px;
+  color: #48515f;
+  font-size: 14px;
+  font-weight: 500; }
+
+/*# sourceMappingURL=style.css.map */

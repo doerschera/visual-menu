@@ -1,0 +1,32 @@
+
+.menu {
+  h4 {
+    color: $orange;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.menu-item {
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+  font-size: 30px;
+  line-height: 50px;
+  cursor: pointer;
+  background-color: $blue;
+  img {
+    height: 100px;
+  }
+  &:hover {
+    background-color: lighten($blue, 10%);
+  }
+}
+
+.menu-item-name {
+  margin-top: 5px;
+  color: $dark-blue;
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -6,9 +6,7 @@ export default class NewOrder extends React.Component {
     let orderItems = this.props.order.items.map((item, i) => {
       return (
         <li className="order-info order-items" key={i}>
-          <h6>{item}</h6>
-          <button>edit</button>
-          <button>remove</button>
+          <h6>{item} <i className="material-icons">close</i></h6>
         </li>
       )
     })

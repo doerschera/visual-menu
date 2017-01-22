@@ -13,7 +13,7 @@
 .order-info {
   h6 {
     font-size: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 0;
   }
   button {
@@ -28,13 +28,12 @@
 .order-items {
   h6 {
     color: $blue;
-  }
-  button {
-    color: $dark-blue;
+    padding: 10px 0;
+    border-bottom: solid 1px #f2f2eb;
   }
   &:nth-child(even) {
     h6 {
-      color: $red;
+      color: $dark-blue;
     }
   }
 }

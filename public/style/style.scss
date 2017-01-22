@@ -24,6 +24,12 @@ li {
   list-style: none;
 }
 
+i {
+  vertical-align: text-bottom;
+  float: right;
+  cursor: pointer;
+}
+
 .container {
   width: 80%;
 }

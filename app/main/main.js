@@ -22,23 +22,23 @@ export default class Main extends React.Component {
       },
       pastOrders: [
         {
+          number: 101,
+          status: 'closed',
+          items: [
+            'Combo #2',
+            'Soda'
+          ],
+          notes: ''
+        },
+        {
           number: 102,
-          open: true,
+          status: 'open',
           items: [
             'Combo #1',
             'Double Cheeseburger',
             'Fries'
           ],
           notes: 'Combo #1 Cheeseburger plain'
-        },
-        {
-          number: 101,
-          open: false,
-          items: [
-            'Combo #2',
-            'Soda'
-          ],
-          notes: ''
         }
       ]
     }

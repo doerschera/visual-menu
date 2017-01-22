@@ -11,6 +11,11 @@ ul {
 li {
   list-style: none; }
 
+i {
+  vertical-align: text-bottom;
+  float: right;
+  cursor: pointer; }
+
 .container {
   width: 80%; }
 
@@ -55,7 +60,7 @@ li {
 
 .order-info h6 {
   font-size: 20px;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 0; }
 .order-info button {
   background-color: transparent;
@@ -65,11 +70,11 @@ li {
   color: #48515f; }
 
 .order-items h6 {
-  color: #61c5be; }
-.order-items button {
-  color: #48515f; }
+  color: #61c5be;
+  padding: 10px 0;
+  border-bottom: solid 1px #f2f2eb; }
 .order-items:nth-child(even) h6 {
-  color: #e95e6c; }
+  color: #48515f; }
 
 .past-orders {
   background-color: #f9f9f9;
@@ -77,10 +82,16 @@ li {
   .past-orders h4 {
     margin-top: 0; }
 
-.open {
-  color: #f6bd58; }
+.order-status.open {
+  color: #f6bd58;
+  margin-top: 30px; }
 
-.close {
+.closed {
   color: #e95e6c; }
+
+.option-buttons {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #f2f2eb; }
 
 /*# sourceMappingURL=style.css.map */

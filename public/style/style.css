@@ -5,13 +5,19 @@ body {
   background-color: #f2f2d9; }
 
 ul {
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 
 li {
   list-style: none; }
 
+.container {
+  width: 80%; }
+
 .greeting {
-  color: #e95e6c; }
+  color: #e95e6c;
+  padding-left: 15px;
+  margin-bottom: 40px; }
 
 .menu h4 {
   color: #f6bd58;
@@ -37,5 +43,27 @@ li {
   color: #48515f;
   font-size: 14px;
   font-weight: 500; }
+
+.new-order {
+  background-color: white;
+  overflow: auto;
+  padding-bottom: 15px !important; }
+
+.order-number {
+  color: #48515f;
+  border-bottom: solid 1px #48515f; }
+
+.order-item h6 {
+  color: #61c5be;
+  font-size: 20px;
+  margin-top: 15px; }
+.order-item button {
+  background-color: transparent;
+  border: none;
+  border-style: none;
+  text-decoration: underline;
+  color: #48515f; }
+.order-item:nth-child(even) h6 {
+  color: #e95e6c; }
 
 /*# sourceMappingURL=style.css.map */

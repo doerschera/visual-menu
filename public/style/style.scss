@@ -2,15 +2,17 @@
 
 // -------- Variables -------------
 
-$light-teal: #79A8A9;
-$dark-teal: #1F4E5F;
+$orange: rgb(246, 189, 88);
+$blue: rgb(97, 197, 190);
+$dark-blue: rgb(72, 81, 95);
+$red: rgb(233, 94, 108);
 
 // ----------------------------------
 
 body {
   font-family: 'Quicksand', 'Helvetica', 'Aerial', sans-serif;
   font-weight: 400;
-  background-color: #f2f2f2;
+  background-color: #f2f2d9;
 }
 
 ul {
@@ -21,12 +23,15 @@ li {
   list-style: none;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 1000px;
-  margin: auto;
+.greeting {
+  color: $red;
+
 }
 
 @import "partials/menu";
+
+
+
+
+
+// Cheeseburger and Drink by Hadi Davodpour from the Noun Project

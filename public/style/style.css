@@ -2,7 +2,7 @@
 body {
   font-family: 'Quicksand', 'Helvetica', 'Aerial', sans-serif;
   font-weight: 400;
-  background-color: #f2f2f2; }
+  background-color: #f2f2d9; }
 
 ul {
   padding: 0; }
@@ -10,32 +10,32 @@ ul {
 li {
   list-style: none; }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 1000px;
-  margin: auto; }
+.greeting {
+  color: #e95e6c; }
 
-.menu {
-  width: 400px;
-  height: 90vh; }
+.menu h4 {
+  color: #f6bd58;
+  font-size: 24px;
+  font-weight: 500; }
 
 .menu-item {
-  height: 50px;
-  width: 100%;
   padding: 10px;
   text-align: center;
   box-sizing: border-box;
   color: white;
   font-size: 30px;
-  line-height: 30px;
-  border-radius: 10px;
-  cursor: pointer; }
-  .menu-item:nth-child(odd) {
-    background-color: #79A8A9; }
-  .menu-item:nth-child(even) {
-    background-color: #1F4E5F;
-    margin: 5px 0; }
+  line-height: 50px;
+  cursor: pointer;
+  background-color: #61c5be; }
+  .menu-item img {
+    height: 100px; }
+  .menu-item:hover {
+    background-color: #86d3cd; }
+
+.menu-item-name {
+  margin-top: 5px;
+  color: #48515f;
+  font-size: 14px;
+  font-weight: 500; }
 
 /*# sourceMappingURL=style.css.map */

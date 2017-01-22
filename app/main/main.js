@@ -1,25 +1,27 @@
 import React from 'react';
 import Menu from './components/Menu';
 
+import menuItems from './menuItems';
+
 export default class Main extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      comboItems: ['#1 Burger Combo', '#2 Burger Combo', '#3 Burger Combo', '#4 Chicken Combo', '#5 Chicken Combo'],
-      aLaCarteItems: ['Hamburger', 'Cheeseburger', 'Double Cheeseburger', 'Medium French Fries', 'Chicken Sandwhich', 'Medium Soda']
+
     }
   }
 
   render() {
     return (
       <div>
-        <h1>Place Order</h1>
         <div className="container">
-          <Menu
-            comboItems={this.state.comboItems}
-            aLaCarteItems={this.state.aLaCarteItems}
-          />
+          <h1 className="greeting row">Place Order</h1>
+          <div className="row">
+            <Menu
+              menuItems={menuItems}
+            />
+          </div>
         </div>
       </div>
     )

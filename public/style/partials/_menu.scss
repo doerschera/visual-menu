@@ -1,25 +1,32 @@
 
 .menu {
-  width: 400px;
-  height: 90vh;
+  h4 {
+    color: $orange;
+    font-size: 24px;
+    font-weight: 500;
+  }
 }
 
 .menu-item {
-  height: 50px;
-  width: 100%;
   padding: 10px;
   text-align: center;
   box-sizing: border-box;
   color: white;
   font-size: 30px;
-  line-height: 30px;
-  border-radius: 10px;
+  line-height: 50px;
   cursor: pointer;
-  &:nth-child(odd) {
-    background-color: $light-teal;
+  background-color: $blue;
+  img {
+    height: 100px;
   }
-  &:nth-child(even) {
-    background-color: $dark-teal;
-    margin: 5px 0;
+  &:hover {
+    background-color: lighten($blue, 10%);
   }
+}
+
+.menu-item-name {
+  margin-top: 5px;
+  color: $dark-blue;
+  font-size: 14px;
+  font-weight: 500;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from './components/Menu';
+import NewOrder from './components/NewOrder';
 
 import menuItems from './menuItems';
 
@@ -21,6 +22,7 @@ export default class Main extends React.Component {
             <Menu
               menuItems={menuItems}
             />
+            <NewOrder />
           </div>
         </div>
       </div>

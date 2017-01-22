@@ -1,15 +1,6 @@
 import React from 'react';
 
 export default class Menu extends React.Component {
-  mapItem(item, i) {
-    return (
-      <div className="col s6">
-        <li className="menu-item" key={item}>
-
-        </li>
-      </div>
-    )
-  }
 
   render() {
     let menuItems = this.props.menuItems.map((item, i) => {

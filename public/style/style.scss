@@ -17,19 +17,23 @@ body {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 
 li {
   list-style: none;
 }
 
+.container {
+  width: 80%;
+}
+
 .greeting {
   color: $red;
-
 }
 
 @import "partials/menu";
-
+@import "partials/new-order";
 
 
 

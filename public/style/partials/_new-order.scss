@@ -1,0 +1,26 @@
+
+.new-order {
+  background-color: white;
+  overflow: auto;
+}
+
+.order-number {
+  color: $dark-blue;
+  border-bottom: solid 1px $dark-blue;
+}
+
+.order-item {
+  h6 {
+    color: $blue;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    border-style: none;
+    text-decoration: underline;
+    color: $dark-blue;
+    float: right;
+  }
+}

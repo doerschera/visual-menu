@@ -15,7 +15,9 @@ li {
   width: 80%; }
 
 .greeting {
-  color: #e95e6c; }
+  color: #e95e6c;
+  padding-left: 15px;
+  margin-bottom: 40px; }
 
 .menu h4 {
   color: #f6bd58;
@@ -43,7 +45,9 @@ li {
   font-weight: 500; }
 
 .new-order {
-  background-color: white; }
+  background-color: white;
+  overflow: auto;
+  padding-bottom: 15px !important; }
 
 .order-number {
   color: #48515f;
@@ -58,7 +62,8 @@ li {
   border: none;
   border-style: none;
   text-decoration: underline;
-  color: #48515f;
-  float: right; }
+  color: #48515f; }
+.order-item:nth-child(even) h6 {
+  color: #e95e6c; }
 
 /*# sourceMappingURL=style.css.map */

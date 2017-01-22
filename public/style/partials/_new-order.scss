@@ -2,6 +2,7 @@
 .new-order {
   background-color: white;
   overflow: auto;
+  padding-bottom: 15px !important;
 }
 
 .order-number {
@@ -21,6 +22,10 @@
     border-style: none;
     text-decoration: underline;
     color: $dark-blue;
-    float: right;
+  }
+  &:nth-child(even) {
+    h6 {
+      color: $red;
+    }
   }
 }

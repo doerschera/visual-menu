@@ -5,8 +5,8 @@ export default class Menu extends React.Component {
   render() {
     let menuItems = this.props.menuItems.map((item, i) => {
       return (
-        <div className="col s6">
-          <li className="menu-item" key={item}>
+        <div className="col s6" key={i}>
+          <li className="menu-item">
             <img src={item.icon}></img>
           </li>
           <p className="menu-item-name">{item.name}</p>

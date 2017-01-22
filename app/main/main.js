@@ -9,7 +9,15 @@ export default class Main extends React.Component {
     super();
 
     this.state = {
-
+      newOrder: {
+        number: 1,
+        items: [
+          'Double Cheeseburger',
+          'Fries',
+          'Soda',
+          'Combo #2'
+        ]
+      }
     }
   }
 
@@ -22,7 +30,9 @@ export default class Main extends React.Component {
             <Menu
               menuItems={menuItems}
             />
-            <NewOrder />
+            <NewOrder
+              order={this.state.newOrder}
+            />
           </div>
         </div>
       </div>

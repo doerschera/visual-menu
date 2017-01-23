@@ -7,7 +7,9 @@ export default class Menu extends React.Component {
       return (
         <div className="col s6" key={i} onClick={this.props.handleOnClick}>
           <li className="menu-item">
-            <img src={item.icon} data-name={item.name}></img>
+            <img
+              src={item.icon} data-name={item.name}
+            ></img>
           </li>
           <p className="menu-item-name">{item.name}</p>
         </div>

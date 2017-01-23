@@ -11,3 +11,24 @@ export function addItem(item) {
     payload: item
   }
 }
+
+export function removeItem(item) {
+  return {
+    type: 'REMOVE_ITEM',
+    payload: item
+  }
+}
+
+export function updateNote(string) {
+  return {
+    type: 'ADD_NOTE',
+    payload: string
+  }
+}
+
+export function submitNewOrder(order) {
+  return {
+    type: 'SUBMIT_ORDER',
+    payload: order
+  }
+}

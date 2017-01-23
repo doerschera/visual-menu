@@ -31,7 +31,10 @@ export default class NewOrder extends React.Component {
             onChange={this.props.handleNoteChange}
           />
         </div>
-        <button className="done-button">Done</button>
+        <button
+          className="done-button"
+          onClick={this.props.handleSubmit}
+        >Done</button>
       </div>
     )
   }

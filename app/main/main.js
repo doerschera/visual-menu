@@ -1,7 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { startNewOrder, addItem, removeItem, updateNote } from '../actions/newOrderActions';
+import {
+  startNewOrder,
+  addItem,
+  removeItem,
+  updateNote,
+  submitNewOrder}
+from '../actions/newOrderActions';
 
 import Menu from './components/Menu';
 import NewOrder from './components/NewOrder';
@@ -13,6 +19,7 @@ import menuItems from './menuItems';
 @connect((store) => {
   return {
     orderCounter: store.newOrder.orderCounter,
+    pastOrders: store.newOrder.pastOrders,
     newOrder: store.newOrder.newOrder
   }
 })
@@ -21,34 +28,10 @@ export default class Main extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      pastOrders: [
-        {
-          number: 101,
-          status: 'closed',
-          items: [
-            'Combo #2',
-            'Soda'
-          ],
-          notes: ''
-        },
-        {
-          number: 102,
-          status: 'open',
-          items: [
-            'Combo #1',
-            'Double Cheeseburger',
-            'Fries'
-          ],
-          notes: 'Combo #1 Cheeseburger plain'
-        }
-      ]
-    }
-
     this.menuItemOnClick = this.menuItemOnClick.bind(this);
     this.removeMenuItem = this.removeMenuItem.bind(this);
     this.noteOnChange = this.noteOnChange.bind(this);
-    this.completeNewOrder = this.completeNewOrder.bind(this);
+    this.submitNewOrder = this.submitNewOrder.bind(this);
   }
 
   menuItemOnClick(event) {
@@ -69,8 +52,8 @@ export default class Main extends React.Component {
     this.props.dispatch(updateNote(event.target.value))
   }
 
-  completeNewOrder() {
-
+  submitNewOrder() {
+    this.props.dispatch(submitNewOrder([this.props.newOrder]))
   }
 
   render() {
@@ -87,9 +70,10 @@ export default class Main extends React.Component {
               order={this.props.newOrder}
               handleRemoveItem={this.removeMenuItem}
               handleNoteChange={this.noteOnChange}
+              handleSubmit={this.submitNewOrder}
             />
             <PastOrders
-              pastOrders={this.state.pastOrders}
+              pastOrders={this.props.pastOrders}
             />
           </div>
         </div>

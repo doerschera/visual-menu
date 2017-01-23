@@ -25,3 +25,10 @@ export function updateNote(string) {
     payload: string
   }
 }
+
+export function submitNewOrder(order) {
+  return {
+    type: 'SUBMIT_ORDER',
+    payload: order
+  }
+}

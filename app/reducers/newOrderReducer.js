@@ -12,7 +12,16 @@ export default function reducer(state={
     case 'NEW_ORDER':
       return {...state,
         newOrder: {
+          number: state.orderCounter,
           items: action.payload
+        }
+      }
+
+    case 'ADD_ITEM':
+      return {...state,
+        newOrder: {
+          number: state.orderCounter,
+          items: state.newOrder.items.concat(action.payload)
         }
       }
 

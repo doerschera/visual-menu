@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { startNewOrder } from '../actions/newOrderActions';
+import { startNewOrder, addItem } from '../actions/newOrderActions';
 
 import Menu from './components/Menu';
 import NewOrder from './components/NewOrder';

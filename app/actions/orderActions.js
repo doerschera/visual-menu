@@ -32,3 +32,24 @@ export function submitNewOrder(order) {
     payload: order
   }
 }
+
+export function orderComplete(index) {
+  return {
+    type: "ORDER_COMPLETE",
+    payload: index
+  }
+}
+
+export function cancelOrder(number) {
+  return {
+    type: "CANCEL_ORDER",
+    payload: number
+  }
+}
+
+export function editOrder(number) {
+  return {
+    type: "EDIT_ORDER",
+    payload: number
+  }
+}

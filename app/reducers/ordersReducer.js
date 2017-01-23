@@ -1,5 +1,4 @@
 export default function reducer(state={
-  orderCounter: 100,
   pastOrders: [],
   newOrder: {
     number: undefined,
@@ -7,6 +6,7 @@ export default function reducer(state={
     status: 'open',
     note: ''
   },
+  orderCounter: 100,
 }, action) {
 
   switch (action.type) {
@@ -51,14 +51,45 @@ export default function reducer(state={
 
     case 'SUBMIT_ORDER':
       return {...state,
-        orderCounter: state.orderCounter+1,
         pastOrders: state.pastOrders.concat(action.payload),
+        orderCounter: state.orderCounter+1,
         newOrder: {
           number: undefined,
           items: [],
           status: 'open',
           note: ''
-        }
+        },
+      }
+
+    case 'ORDER_COMPLETE':
+      return {...state,
+        pastOrders: state.pastOrders.map(function(element, i) {
+          if(i === parseInt(action.payload)) {
+            return {...element, status: 'closed'}
+          } else {
+            return {...element}
+          }
+        })
+      }
+
+    case 'CANCEL_ORDER':
+      return {...state,
+        pastOrders: state.pastOrders.filter((element) => {
+          return element.number != action.payload;
+        })
+
+      }
+
+    case "EDIT_ORDER":
+      let editOrderArray = state.pastOrders.filter((element) => {
+        return element.number === parseInt(action.payload)
+      })
+      return {...state,
+        newOrder: editOrderArray[0],
+        pastOrders: state.pastOrders.filter((element) => {
+          return element.number != parseInt(action.payload)
+        }),
+        orderCounter: state.orderCounter - 1
       }
 
     default:

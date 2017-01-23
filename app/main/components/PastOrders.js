@@ -4,11 +4,6 @@ export default class PastOrders extends React.Component {
 
   render() {
     let ordersReverse = this.props.pastOrders.reverse();
-    let icon = <i className="material-icons">check_circle</i>
-    let buttons = <div className="option-buttons">
-      <button>edit</button>
-      <button>remove</button>
-    </div>
 
     let pastOrders = ordersReverse.map((order, i) => {
       return (
@@ -18,9 +13,25 @@ export default class PastOrders extends React.Component {
           >
             Order #{order.number} : {order.items.length} items
 
-            {order.status === 'open' ? icon : null}
+            {order.status === 'open' ?
+              <i
+                className="material-icons"
+                data-index={i}
+                onClick={this.props.handleOrderComplete}
+              >check_circle</i> : null}
           </h6>
-          {order.status === 'open' ? buttons : null}
+          {order.status === 'open' ?
+            <div className="option-buttons">
+              <button
+                data-number={order.number}
+                onClick={this.props.handleEditOrder}
+              >edit</button>
+              <button
+                data-number={order.number}
+                onClick={this.props.handleCancelOrder}
+              >cancel</button>
+            </div>
+          : null}
         </li>
       )
     })

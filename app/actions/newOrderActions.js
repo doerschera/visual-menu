@@ -18,3 +18,10 @@ export function removeItem(item) {
     payload: item
   }
 }
+
+export function updateNote(string) {
+  return {
+    type: 'ADD_NOTE',
+    payload: string
+  }
+}

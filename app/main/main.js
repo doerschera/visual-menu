@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { startNewOrder, addItem, removeItem } from '../actions/newOrderActions';
+import { startNewOrder, addItem, removeItem, updateNote } from '../actions/newOrderActions';
 
 import Menu from './components/Menu';
 import NewOrder from './components/NewOrder';
@@ -47,6 +47,8 @@ export default class Main extends React.Component {
 
     this.menuItemOnClick = this.menuItemOnClick.bind(this);
     this.removeMenuItem = this.removeMenuItem.bind(this);
+    this.noteOnChange = this.noteOnChange.bind(this);
+    this.completeNewOrder = this.completeNewOrder.bind(this);
   }
 
   menuItemOnClick(event) {
@@ -63,6 +65,14 @@ export default class Main extends React.Component {
     this.props.dispatch(removeItem(event.target.getAttribute('data-item')))
   }
 
+  noteOnChange(event) {
+    this.props.dispatch(updateNote(event.target.value))
+  }
+
+  completeNewOrder() {
+
+  }
+
   render() {
     return (
       <div>
@@ -76,6 +86,7 @@ export default class Main extends React.Component {
             <NewOrder
               order={this.props.newOrder}
               handleRemoveItem={this.removeMenuItem}
+              handleNoteChange={this.noteOnChange}
             />
             <PastOrders
               pastOrders={this.state.pastOrders}

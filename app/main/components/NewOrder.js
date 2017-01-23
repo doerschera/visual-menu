@@ -25,7 +25,11 @@ export default class NewOrder extends React.Component {
         </ul>
         <div className="input-field special-notes">
           <p>Special Notes</p>
-          <input type="text" />
+          <input
+            type="text"
+            value={this.props.order.note}
+            onChange={this.props.handleNoteChange}
+          />
         </div>
         <button className="done-button">Done</button>
       </div>

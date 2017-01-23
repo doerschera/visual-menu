@@ -35,6 +35,15 @@ export default function reducer(state={
         }
       }
 
+    case 'ADD_NOTE':
+      return {...state,
+        newOrder: {
+          number: state.orderCounter,
+          items: state.newOrder.items,
+          note: action.payload
+        }
+      }
+
     default:
       return state;
   }

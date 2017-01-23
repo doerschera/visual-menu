@@ -46,3 +46,10 @@ export function cancelOrder(number) {
     payload: number
   }
 }
+
+export function editOrder(number) {
+  return {
+    type: "EDIT_ORDER",
+    payload: number
+  }
+}

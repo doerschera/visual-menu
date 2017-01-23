@@ -24,6 +24,7 @@ export default class PastOrders extends React.Component {
             <div className="option-buttons">
               <button
                 data-number={order.number}
+                onClick={this.props.handleEditOrder}
               >edit</button>
               <button
                 data-number={order.number}

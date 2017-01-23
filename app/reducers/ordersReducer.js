@@ -58,7 +58,7 @@ export default function reducer(state={
           items: [],
           status: 'open',
           note: ''
-        }
+        },
       }
 
     case 'ORDER_COMPLETE':
@@ -78,6 +78,18 @@ export default function reducer(state={
           return element.number != action.payload;
         })
 
+      }
+
+    case "EDIT_ORDER":
+      let editOrderArray = state.pastOrders.filter((element) => {
+        return element.number === parseInt(action.payload)
+      })
+      return {...state,
+        newOrder: editOrderArray[0],
+        pastOrders: state.pastOrders.filter((element) => {
+          return element.number != parseInt(action.payload)
+        }),
+        orderCounter: state.orderCounter - 1
       }
 
     default:

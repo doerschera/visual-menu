@@ -8,7 +8,8 @@ import {
   updateNote,
   submitNewOrder,
   orderComplete,
-  cancelOrder
+  cancelOrder,
+  editOrder
 }from '../actions/orderActions';
 
 // import {
@@ -40,6 +41,7 @@ export default class Main extends React.Component {
     this.submitNewOrder = this.submitNewOrder.bind(this);
     this.markOrderComplete = this.markOrderComplete.bind(this);
     this.cancelOrder = this.cancelOrder.bind(this);
+    this.editOrder = this.editOrder.bind(this);
   }
 
   menuItemOnClick(event) {
@@ -74,6 +76,11 @@ export default class Main extends React.Component {
     this.props.dispatch(cancelOrder(orderNumber));
   }
 
+  editOrder(event) {
+    let orderNumber = parseInt(event.target.getAttribute('data-number'));
+    this.props.dispatch(editOrder(orderNumber));
+  }
+
   render() {
     return (
       <div>
@@ -94,6 +101,7 @@ export default class Main extends React.Component {
               pastOrders={this.props.pastOrders}
               handleOrderComplete={this.markOrderComplete}
               handleCancelOrder={this.cancelOrder}
+              handleEditOrder={this.editOrder}
             />
           </div>
         </div>

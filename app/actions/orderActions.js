@@ -32,3 +32,10 @@ export function submitNewOrder(order) {
     payload: order
   }
 }
+
+export function orderComplete(index) {
+  return {
+    type: "ORDER_COMPLETE",
+    payload: index
+  }
+}

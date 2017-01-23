@@ -6,8 +6,13 @@ import {
   addItem,
   removeItem,
   updateNote,
-  submitNewOrder}
-from '../actions/newOrderActions';
+  submitNewOrder,
+  orderComplete
+}from '../actions/orderActions';
+
+// import {
+//   orderComplete
+// } from '../actions/pastOrdersActions';
 
 import Menu from './components/Menu';
 import NewOrder from './components/NewOrder';
@@ -18,9 +23,9 @@ import menuItems from './menuItems';
 // connect to store
 @connect((store) => {
   return {
-    orderCounter: store.newOrder.orderCounter,
-    pastOrders: store.newOrder.pastOrders,
-    newOrder: store.newOrder.newOrder
+    orderCounter: store.orders.orderCounter,
+    pastOrders: store.orders.pastOrders,
+    newOrder: store.orders.newOrder
   }
 })
 
@@ -32,6 +37,7 @@ export default class Main extends React.Component {
     this.removeMenuItem = this.removeMenuItem.bind(this);
     this.noteOnChange = this.noteOnChange.bind(this);
     this.submitNewOrder = this.submitNewOrder.bind(this);
+    this.markOrderComplete = this.markOrderComplete.bind(this);
   }
 
   menuItemOnClick(event) {
@@ -53,7 +59,12 @@ export default class Main extends React.Component {
   }
 
   submitNewOrder() {
-    this.props.dispatch(submitNewOrder([this.props.newOrder]))
+    let newOrder = [this.props.newOrder];
+    this.props.dispatch(submitNewOrder(newOrder))
+  }
+
+  markOrderComplete(event) {
+    this.props.dispatch(orderComplete(event.target.getAttribute('data-index')))
   }
 
   render() {
@@ -74,6 +85,7 @@ export default class Main extends React.Component {
             />
             <PastOrders
               pastOrders={this.props.pastOrders}
+              handleOrderComplete={this.markOrderComplete}
             />
           </div>
         </div>

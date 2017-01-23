@@ -72,6 +72,14 @@ export default function reducer(state={
         })
       }
 
+    case 'CANCEL_ORDER':
+      return {...state,
+        pastOrders: state.pastOrders.filter((element) => {
+          return element.number != action.payload;
+        })
+
+      }
+
     default:
       return state;
   }

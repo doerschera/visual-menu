@@ -5,11 +5,6 @@ export default class PastOrders extends React.Component {
   render() {
     let ordersReverse = this.props.pastOrders.reverse();
 
-    let buttons = <div className="option-buttons">
-      <button>edit</button>
-      <button>remove</button>
-    </div>
-
     let pastOrders = ordersReverse.map((order, i) => {
       return (
         <li className="order-info past-order" key={i}>
@@ -25,7 +20,17 @@ export default class PastOrders extends React.Component {
                 onClick={this.props.handleOrderComplete}
               >check_circle</i> : null}
           </h6>
-          {order.status === 'open' ? buttons : null}
+          {order.status === 'open' ?
+            <div className="option-buttons">
+              <button
+                data-number={order.number}
+              >edit</button>
+              <button
+                data-number={order.number}
+                onClick={this.props.handleCancelOrder}
+              >cancel</button>
+            </div>
+          : null}
         </li>
       )
     })

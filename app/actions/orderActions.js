@@ -39,3 +39,10 @@ export function orderComplete(index) {
     payload: index
   }
 }
+
+export function cancelOrder(number) {
+  return {
+    type: "CANCEL_ORDER",
+    payload: number
+  }
+}

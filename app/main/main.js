@@ -10,6 +10,7 @@ export default class Main extends React.Component {
     super();
 
     this.state = {
+      orderCounter: 100,
       newOrder: {
         number: 102,
         items: [
@@ -43,6 +44,13 @@ export default class Main extends React.Component {
       ]
     }
 
+    this.menuItemOnClick = this.menuItemOnClick.bind(this);
+  }
+
+  menuItemOnClick(event) {
+    if(this.state.newOrder.number) {
+
+    }
   }
 
   render() {

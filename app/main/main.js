@@ -1,26 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { startNewOrder } from '../actions/newOrderActions';
+
 import Menu from './components/Menu';
 import NewOrder from './components/NewOrder';
 import PastOrders from './components/PastOrders';
 
 import menuItems from './menuItems';
 
+// connect to store
+@connect((store) => {
+  return {
+    orderCounter: store.newOrder.orderCounter,
+    newOrder: store.newOrder.newOrder
+  }
+})
+
 export default class Main extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      orderCounter: 100,
-      newOrder: {
-        number: 102,
-        items: [
-          'Double Cheeseburger',
-          'Fries',
-          'Soda',
-          'Combo #2'
-        ],
-        note: ''
-      },
       pastOrders: [
         {
           number: 101,
@@ -48,8 +49,12 @@ export default class Main extends React.Component {
   }
 
   menuItemOnClick(event) {
-    if(this.state.newOrder.number) {
-
+    let menuItem = [event.target.getAttribute('data-name')];
+    console.log(menuItem);
+    if(this.props.newOrder.number) {
+      this.props.dispatch(addItem(menuItem))
+    } else {
+      this.props.dispatch(startNewOrder(menuItem))
     }
   }
 
@@ -61,9 +66,10 @@ export default class Main extends React.Component {
           <div className="row">
             <Menu
               menuItems={menuItems}
+              handleOnClick={this.menuItemOnClick}
             />
             <NewOrder
-              order={this.state.newOrder}
+              order={this.props.newOrder}
             />
             <PastOrders
               pastOrders={this.state.pastOrders}

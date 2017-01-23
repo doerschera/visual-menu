@@ -11,3 +11,10 @@ export function addItem(item) {
     payload: item
   }
 }
+
+export function removeItem(item) {
+  return {
+    type: 'REMOVE_ITEM',
+    payload: item
+  }
+}

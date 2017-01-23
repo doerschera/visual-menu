@@ -25,6 +25,16 @@ export default function reducer(state={
         }
       }
 
+    case 'REMOVE_ITEM':
+      return {...state,
+        newOrder: {
+          number: state.orderCounter,
+          items: state.newOrder.items.filter((element) => {
+            return element != action.payload;
+          })
+        }
+      }
+
     default:
       return state;
   }

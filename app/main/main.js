@@ -49,9 +49,7 @@ export default class Main extends React.Component {
       return order.status === 'open';
     })
 
-    console.log(openOrders.length);
-    console.log(this.props.alertManager)
-;    if(openOrders.length > 4 && !this.props.alertManager) {
+   if(openOrders.length > 4 && !this.props.alertManager) {
       this.props.dispatch(alertManager())
     } else if (openOrders.length <= 4 && this.props.alertManager) {
       this.props.dispatch(alertManager())

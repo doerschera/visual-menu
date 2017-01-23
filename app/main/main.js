@@ -9,16 +9,14 @@ import {
   submitNewOrder,
   orderComplete,
   cancelOrder,
-  editOrder
+  editOrder,
+  alertManager
 }from '../actions/orderActions';
-
-// import {
-//   orderComplete
-// } from '../actions/pastOrdersActions';
 
 import Menu from './components/Menu';
 import NewOrder from './components/NewOrder';
 import PastOrders from './components/PastOrders';
+import ManagerAlert from './components/ManagerAlert';
 
 import menuItems from './menuItems';
 
@@ -27,7 +25,8 @@ import menuItems from './menuItems';
   return {
     orderCounter: store.orders.orderCounter,
     pastOrders: store.orders.pastOrders,
-    newOrder: store.orders.newOrder
+    newOrder: store.orders.newOrder,
+    alertManager: store.orders.alertManager
   }
 })
 
@@ -42,6 +41,21 @@ export default class Main extends React.Component {
     this.markOrderComplete = this.markOrderComplete.bind(this);
     this.cancelOrder = this.cancelOrder.bind(this);
     this.editOrder = this.editOrder.bind(this);
+    this.closeAlert = this.closeAlert.bind(this);
+  }
+
+  componentDidUpdate() {
+    let openOrders = this.props.pastOrders.filter((order) => {
+      return order.status === 'open';
+    })
+
+    console.log(openOrders.length);
+    console.log(this.props.alertManager)
+;    if(openOrders.length > 4 && !this.props.alertManager) {
+      this.props.dispatch(alertManager())
+    } else if (openOrders.length <= 4 && this.props.alertManager) {
+      this.props.dispatch(alertManager())
+    }
   }
 
   menuItemOnClick(event) {
@@ -81,6 +95,10 @@ export default class Main extends React.Component {
     this.props.dispatch(editOrder(orderNumber));
   }
 
+  closeAlert() {
+    this.props.dispatch(alertManager());
+  }
+
   render() {
     return (
       <div>
@@ -102,7 +120,9 @@ export default class Main extends React.Component {
               handleOrderComplete={this.markOrderComplete}
               handleCancelOrder={this.cancelOrder}
               handleEditOrder={this.editOrder}
+              alertManager={this.props.alertManager}
             />
+          {this.props.alertManager ? <ManagerAlert/> : null}
           </div>
         </div>
       </div>

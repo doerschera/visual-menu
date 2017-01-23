@@ -3,9 +3,7 @@ import React from 'react';
 export default class PastOrders extends React.Component {
 
   render() {
-    let ordersReverse = this.props.pastOrders.reverse();
-
-    let pastOrders = ordersReverse.map((order, i) => {
+    let pastOrders = this.props.pastOrders.map((order, i) => {
       return (
         <li className="order-info past-order" key={i}>
           <h6

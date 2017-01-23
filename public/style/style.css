@@ -110,4 +110,13 @@ i {
   margin-bottom: 20px;
   border-bottom: solid 1px #f2f2eb; }
 
+.manager-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  background-color: #e95e6c;
+  color: white;
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */

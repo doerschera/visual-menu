@@ -53,3 +53,9 @@ export function editOrder(number) {
     payload: number
   }
 }
+
+export function alertManager() {
+  return {
+    type: 'ALERT_MANAGER'
+  }
+}

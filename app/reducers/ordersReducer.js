@@ -7,6 +7,7 @@ export default function reducer(state={
     note: ''
   },
   orderCounter: 100,
+  alertManager: false
 }, action) {
 
   switch (action.type) {
@@ -90,6 +91,11 @@ export default function reducer(state={
           return element.number != parseInt(action.payload)
         }),
         orderCounter: state.orderCounter - 1
+      }
+
+    case "ALERT_MANAGER":
+      return {...state,
+        alertManager: !state.alertManager
       }
 
     default:

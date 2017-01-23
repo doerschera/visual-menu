@@ -111,20 +111,12 @@ i {
   border-bottom: solid 1px #f2f2eb; }
 
 .manager-alert {
-  width: 500px;
-  height: 200px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: solid 3px red;
-  color: #48515f;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  background-color: #e95e6c;
+  color: white;
   text-align: center; }
-
-.alert-button {
-  float: none;
-  width: 80px;
-  margin-top: 20px; }
 
 /*# sourceMappingURL=style.css.map */

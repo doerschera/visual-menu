@@ -33,10 +33,10 @@ export function submitNewOrder(order) {
   }
 }
 
-export function orderComplete(index) {
+export function orderComplete(number) {
   return {
     type: "ORDER_COMPLETE",
-    payload: index
+    payload: number
   }
 }
 

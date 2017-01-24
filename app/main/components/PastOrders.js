@@ -1,46 +1,60 @@
 import React from 'react';
 
+import OpenOrders from './OpenOrder';
+
 export default class PastOrders extends React.Component {
 
-  render() {
-    let pastOrders = this.props.pastOrders.map((order, i) => {
-      return (
-        <li className="order-info past-order" key={i}>
-          <h6
-            className={`order-status ${order.status}`}
-          >
-            Order #{order.number} : {order.items.length} items
-
-            {order.status === 'open' ?
-              <i
-                className="material-icons"
-                data-index={i}
-                onClick={this.props.handleOrderComplete}
-              >check_circle</i> : null}
-          </h6>
-          {order.status === 'open' ?
-            <div className="option-buttons">
-              <button
-                data-number={order.number}
-                onClick={this.props.handleEditOrder}
-              >edit</button>
-              <button
-                data-number={order.number}
-                onClick={this.props.handleCancelOrder}
-              >cancel</button>
-            </div>
-          : null}
-        </li>
-      )
+  displayOpenOrders() {
+    let openOrders = this.props.pastOrders.filter((element) => {
+      return element.status === 'open';
     })
+    console.log(openOrders);
+
+    if(openOrders.length) {
+      return openOrders.map((order, i) => {
+        return <OpenOrders
+          key={order.number}
+          order={order}
+          handleOrderComplete={this.props.handleOrderComplete}
+          handleEditOrder={this.props.handleEditOrder}
+          handleCancelOrder={this.props.handleCancelOrder}
+        />
+      })
+    } else {
+      return null;
+    }
+  }
+
+  displayClosedOrders() {
+    let closedOrders = this.props.pastOrders.filter((element) => {
+      return element.status === 'closed';
+    })
+    console.log(closedOrders);
+
+    return closedOrders.map((order, i) => {
+      return <h6
+        key={order.number}
+        className={`order-status ${order.status}`}
+      >
+        Order #{order.number} : {order.items.length} items
+      </h6>
+    })
+  }
+
+  render() {
 
     return (
       <div className="col s4">
         <div className='past-orders'>
           <h4 className="past-order-heading">Past Orders</h4>
-          <ul className="order-list">
-            {pastOrders}
-          </ul>
+          <div className="order-list">
+            <div id="open-orders">
+              {this.displayOpenOrders()}
+            </div>
+            <div className="closed-orders">
+              {this.displayClosedOrders()}
+            </div>
+          </div>
         </div>
       </div>
     )

@@ -80,7 +80,7 @@ export default class Main extends React.Component {
   }
 
   markOrderComplete(event) {
-    this.props.dispatch(orderComplete(event.target.getAttribute('data-index')))
+    this.props.dispatch(orderComplete(event.target.getAttribute('data-number')))
   }
 
   cancelOrder(event) {

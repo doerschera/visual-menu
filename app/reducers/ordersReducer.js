@@ -66,8 +66,8 @@ export default function reducer(state={
 
     case 'ORDER_COMPLETE':
       return {...state,
-        pastOrders: state.pastOrders.map(function(element, i) {
-          if(i === parseInt(action.payload)) {
+        pastOrders: state.pastOrders.map(function(element) {
+          if(element.number === parseInt(action.payload)) {
             return {...element, status: 'closed'}
           } else {
             return {...element}

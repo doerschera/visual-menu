@@ -90,6 +90,10 @@ export default class Main extends React.Component {
 
   editOrder(event) {
     let orderNumber = parseInt(event.target.getAttribute('data-number'));
+
+    if(this.props.newOrder.number != undefined) {
+      this.props.dispatch(submitNewOrder([this.props.newOrder]))
+    }
     this.props.dispatch(editOrder(orderNumber));
   }
 

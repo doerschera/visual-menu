@@ -15,6 +15,7 @@ export default class PastOrders extends React.Component {
         return <OpenOrders
           key={order.number}
           order={order}
+          i={i}
           handleOrderComplete={this.props.handleOrderComplete}
           handleEditOrder={this.props.handleEditOrder}
           handleCancelOrder={this.props.handleCancelOrder}
@@ -48,7 +49,7 @@ export default class PastOrders extends React.Component {
         <div className='past-orders'>
           <h4 className="past-order-heading">Past Orders</h4>
           <div className="order-list">
-            <div id="open-orders">
+            <div className="open-orders">
               {this.displayOpenOrders()}
             </div>
             <div className="closed-orders">

@@ -62,12 +62,6 @@ i {
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 0; }
-.order-info button {
-  background-color: transparent;
-  border: none;
-  border-style: none;
-  text-decoration: underline;
-  color: #48515f; }
 
 .order-items h6 {
   color: #61c5be;
@@ -98,6 +92,15 @@ i {
   .past-orders h4 {
     margin-top: 0; }
 
+.open-orders {
+  border-bottom: solid 1px #f2f2eb; }
+
+.closed-orders {
+  padding-top: 15px; }
+
+.order-status {
+  font-size: 20px; }
+
 .order-status.open {
   color: #f6bd58;
   margin-top: 30px; }
@@ -105,10 +108,14 @@ i {
 .closed {
   color: #e95e6c; }
 
-.option-buttons {
+.option-buttons button {
+  background-color: transparent;
+  border: none;
+  border-style: none;
+  text-decoration: underline;
+  color: #48515f;
   padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: solid 1px #f2f2eb; }
+  margin-bottom: 20px; }
 
 .manager-alert {
   position: absolute;

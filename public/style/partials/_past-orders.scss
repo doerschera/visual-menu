@@ -7,6 +7,18 @@
   }
 }
 
+.open-orders {
+  border-bottom: solid 1px #f2f2eb;
+}
+
+.closed-orders {
+  padding-top: 15px;
+}
+
+.order-status {
+  font-size: 20px;
+}
+
 .order-status.open {
   color: $orange;
   margin-top: 30px;
@@ -16,8 +28,15 @@
   color: $red;
 }
 
+
 .option-buttons {
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: solid 1px #f2f2eb;
+  button {
+    background-color: transparent;
+    border: none;
+    border-style: none;
+    text-decoration: underline;
+    color: $dark-blue;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
 }

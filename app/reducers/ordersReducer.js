@@ -90,7 +90,7 @@ export default function reducer(state={
         pastOrders: state.pastOrders.filter((element) => {
           return element.number != parseInt(action.payload)
         }),
-        orderCounter: state.orderCounter - 1
+        orderCounter: parseInt(action.payload)
       }
 
     case "ALERT_MANAGER":
